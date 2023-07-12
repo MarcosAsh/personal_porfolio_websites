@@ -37,15 +37,15 @@ const Home = () => (
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         css={{ backdropFilter: 'blur(10px)' }}
       >
-        Hello, I&apos;m an indie app developer based in Japan!
+        Hello Iam a spanish developer
       </Box>
 
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Takuya Matsuyama
+            Marcos Ashton Iglesias
           </Heading>
-          <p>Digital Craftsman ( Artist / Developer / Designer )</p>
+          <p>Student and programmer</p>
         </Box>
         <Box
           flexShrink={0}
@@ -79,26 +79,23 @@ const Home = () => (
           Work
         </Heading>
         <Paragraph>
-          Takuya is a freelance and a full-stack developer based in Osaka with a
-          passion for building digital services/stuff he wants. He has a knack
-          for all things launching products, from planning and designing all the
-          way to solving real-life problems with code. When not online, he loves
-          hanging out with his camera. Currently, he is living off of his own
-          product called{' '}
+          Iam a student and programmer proficient in Unity, React, Flask, Python, TensorFlow
+           and many more. With a published open source game that acts as a framework for the community
+          as to let them innovate over my simplafied product. I am also a founder of a robotics company
+          currently protoyping a quadraped robot with great prospects in the private field. {' '}
           <Link as={NextLink} href="/works/inkdrop" passHref scroll={false}>
-            Inkdrop
+            Unity Rpg
           </Link>
-          . He publishes content for marketing his products and his YouTube
-          channel called &quot;
+          . You can also view my EPQ (extended project qualification here): "
           <Link
             as={NextLink}
             href="https://www.youtube.com/devaslife"
             passHref
             target="_blank"
           >
-            Dev as Life
+            EPQ
           </Link>
-          &quot; has more than 100k subscribers.
+          &quot; has a series of applications.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
@@ -118,11 +115,11 @@ const Home = () => (
           Bio
         </Heading>
         <BioSection>
-          <BioYear>1984</BioYear>
-          Born in Osaka (大阪), Japan.
+          <BioYear>2006</BioYear>
+          Born in Madrid, Spain
         </BioSection>
         <BioSection>
-          <BioYear>2010</BioYear>
+          <BioYear>2022</BioYear>
           Completed the Master&apos;s Program in the Graduate School of
           Information Science at Nara Institute of Science and Technology
           (奈良先端科学技術大学院大学情報科学研究科修士課程)
@@ -139,18 +136,11 @@ const Home = () => (
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
-          I ♥
+          My passions
         </Heading>
         <Paragraph>
-          Art, Music,{' '}
-          <Link href="https://illust.odoruinu.net/" target="_blank">
-            Drawing
-          </Link>
-          , Playing Drums,{' '}
-          <Link href="https://500px.com/p/craftzdog" target="_blank">
-            Photography
-          </Link>
-          , Leica, Machine Learning
+          Machiene learning, Basketball, Crypto mining, Mathematics, Computer architecture design,
+           Robotics and Computer Hardware
         </Paragraph>
       </Section>
 
@@ -160,13 +150,13 @@ const Home = () => (
         </Heading>
         <List>
           <ListItem>
-            <Link href="https://github.com/craftzdog" target="_blank">
+            <Link href="https://github.com/MarcosAsh" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
                 leftIcon={<IoLogoGithub />}
               >
-                @craftzdog
+                @MarcosAsh
               </Button>
             </Link>
           </ListItem>
@@ -177,18 +167,7 @@ const Home = () => (
                 colorScheme="teal"
                 leftIcon={<IoLogoTwitter />}
               >
-                @inkdrop_app (English)
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://twitter.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoTwitter />}
-              >
-                @craftzdog (日本語)
+                @MarcosAsh(twitter to be made)
               </Button>
             </Link>
           </ListItem>
@@ -199,7 +178,7 @@ const Home = () => (
                 colorScheme="teal"
                 leftIcon={<IoLogoInstagram />}
               >
-                @craftzdog
+                @marcos__aashton
               </Button>
             </Link>
           </ListItem>
@@ -208,37 +187,36 @@ const Home = () => (
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
             href="https://www.youtube.com/devaslife"
-            title="Dev as Life"
+            title="EPQ"
             thumbnail={thumbYouTube}
           >
-            My YouTube channel (&gt;150k subs)
+            My Extended project qualification
           </GridItem>
           <GridItem
             href="https://www.inkdrop.app/"
-            title="Inkdrop"
+            title="Robotics Company"
             thumbnail={thumbInkdrop}
           >
-            A Markdown note-taking app
+            A ground-breaking quadraped design
           </GridItem>
         </SimpleGrid>
 
         <Heading as="h3" variant="section-title">
-          Newsletter
+          Contact me
         </Heading>
         <p>
-          Join me on a behind-the-scenes coding journey. Weekly updates on
-          projects, tutorials, and videos
+          If you have any questions please contact me.
         </p>
 
         <Box align="center" my={4}>
           <Button
             as={NextLink}
-            href="https://www.devas.life/"
+            href=""
             scroll={false}
             leftIcon={<EmailIcon />}
             colorScheme="teal"
           >
-            Sign up my newsletter here
+            marcosashiglesias@gmail.com
           </Button>
         </Box>
       </Section>

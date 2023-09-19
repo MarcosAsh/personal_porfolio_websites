@@ -18,8 +18,8 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
 import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
-import thumbYouTube from '../public/images/links/youtube.png'
-import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
+import thumbYouTube from '../public/images/EPQ.png'
+import thumbInkdrop from '../public/images/robot_dog.png'
 import Image from 'next/image'
 
 const ProfileImage = chakra(Image, {
@@ -37,15 +37,15 @@ const Home = () => (
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         css={{ backdropFilter: 'blur(10px)' }}
       >
-        Hello Iam a spanish developer
+        Hello I'am a Spanish developer
       </Box>
 
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Marcos Ashton Iglesias
+            Marcos Ashton
           </Heading>
-          <p>Student and programmer</p>
+          <p>Student and programmer </p>
         </Box>
         <Box
           flexShrink={0}
@@ -64,7 +64,7 @@ const Home = () => (
             overflow="hidden"
           >
             <ProfileImage
-              src="/images/takuya.jpg"
+              src="/loogo.jfif"
               alt="Profile image"
               borderRadius="full"
               width="100"
@@ -80,22 +80,16 @@ const Home = () => (
         </Heading>
         <Paragraph>
           Iam a student and programmer proficient in Unity, React, Flask, Python, TensorFlow
-           and many more. With a published open source game that acts as a framework for the community
-          as to let them innovate over my simplafied product. I am also a founder of a robotics company
-          currently protoyping a quadraped robot with great prospects in the private field. {' '}
-          <Link as={NextLink} href="/works/inkdrop" passHref scroll={false}>
-            Unity Rpg
+           and next.js. I am also a founder of a robotics company
+          currently protoyping a quadraped robot with great prospects in the private field. You can see my robot here: {' '}
+          <Link as={NextLink} href="/works/robot_dog" passHref scroll={false}>
+            Robot dog
           </Link>
-          . You can also view my EPQ (extended project qualification here): "
-          <Link
-            as={NextLink}
-            href="https://www.youtube.com/devaslife"
-            passHref
-            target="_blank"
-          >
+          . You can also view my EPQ (extended project qualification) here: "
+          <Link as={NextLink} href="/works/EPQ" passHref scroll={false}>
             EPQ
           </Link>
-          &quot; has a series of applications.
+          &quot; which has a series of applications in the agricultural secter.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
@@ -119,18 +113,20 @@ const Home = () => (
           Born in Madrid, Spain
         </BioSection>
         <BioSection>
+          <BioYear>2021</BioYear>
+          Founded my robotics company
+        </BioSection>
+        <BioSection>
           <BioYear>2022</BioYear>
-          Completed the Master&apos;s Program in the Graduate School of
-          Information Science at Nara Institute of Science and Technology
-          (奈良先端科学技術大学院大学情報科学研究科修士課程)
+          Started my EPQ
         </BioSection>
         <BioSection>
-          <BioYear>2010</BioYear>
-          Worked at Yahoo! Japan (ヤフー株式会社入社)
+          <BioYear>2023 to present</BioYear>
+          Started making Websites
         </BioSection>
         <BioSection>
-          <BioYear>2012 to present</BioYear>
-          Working as a freelancer
+          <BioYear>2024</BioYear>
+          Graduated from Hastings School
         </BioSection>
       </Section>
 
@@ -139,8 +135,8 @@ const Home = () => (
           My passions
         </Heading>
         <Paragraph>
-          Machiene learning, Basketball, Crypto mining, Mathematics, Computer architecture design,
-           Robotics and Computer Hardware
+          Machine learning, Computer Hardware, Crypto mining, Mathematics, Computer architecture, Computer science,
+          Robotics and Basketball.
         </Paragraph>
       </Section>
 
@@ -161,18 +157,7 @@ const Home = () => (
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="https://twitter.com/inkdrop_app" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoTwitter />}
-              >
-                @MarcosAsh(twitter to be made)
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://instagram.com/craftzdog" target="_blank">
+            <Link href="https://www.instagram.com/marcos_aashton/" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
@@ -186,14 +171,14 @@ const Home = () => (
 
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
-            href="https://www.youtube.com/devaslife"
+            href="works\inkdrop"
             title="EPQ"
             thumbnail={thumbYouTube}
           >
-            My Extended project qualification
+            My Extended Project Qualification
           </GridItem>
           <GridItem
-            href="https://www.inkdrop.app/"
+            href="works\fourpainters"
             title="Robotics Company"
             thumbnail={thumbInkdrop}
           >

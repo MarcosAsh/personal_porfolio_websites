@@ -3,120 +3,118 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
-import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
-import thumbWalknote from '../public/images/works/walknote_eyecatch.png'
-import thumbFourPainters from '../public/images/works/the-four-painters_eyecatch.jpg'
-import thumbMenkiki from '../public/images/works/menkiki_eyecatch.png'
-import thumbMargelo from '../public/images/works/margelo_eyecatch.png'
-import thumbModeTokyo from '../public/images/works/modetokyo_eyecatch.png'
-import thumbStyly from '../public/images/works/styly_eyecatch.png'
-import thumbPichu2 from '../public/images/works/pichu2_eyecatch.png'
-import thumbFreeDBTagger from '../public/images/works/freedbtagger_eyecatch.png'
-import thumbAmembo from '../public/images/works/amembo_eyecatch.png'
-
+import thumbepq from '../public/images/EPQ.png'
+import thumbtensorflow from '../public/images/TENSORFLOW.jpg'
+import thumbrobotdog from '../public/images/robot_dog.png'
+import thumbcurrentwebsite from '../public/images/links/Current-website.jpg'
+import thumbkinematics from '../public/images/kinematics.jpg'
+import thumbandriod from '../public/images/andriod.png'
+import thumbpcbuilds from '../public/images/torrent.jpeg'
+import thumbminers from '../public/images/miner.jpg'
+import thumbaiclub from '../public/images/aiclub.jpg'
 const Works = () => (
   <Layout title="Works">
     <Container>
       <Heading as="h3" fontSize={20} mb={4}>
-        Works
+         Works
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
-          <WorkGridItem id="inkdrop" title="Inkdrop" thumbnail={thumbInkdrop}>
-            A Markdown note-taking app with 100+ plugins, cross-platform and
-            encrypted data sync support
+          <WorkGridItem
+            id="EPQ"
+            title="EPQ"
+            thumbnail={thumbepq}
+            >
+            A machine learning model that predicts the crop yeild from certain data.
           </WorkGridItem>
         </Section>
         <Section>
           <WorkGridItem
-            id="walknote"
-            title="walknote"
-            thumbnail={thumbWalknote}
-          >
-            Music recommendation app for iOS
+            id="Current_website"
+            title="This website"
+            thumbnail={thumbcurrentwebsite}
+            >
+            The website you are currently on
           </WorkGridItem>
         </Section>
 
         <Section delay={0.1}>
           <WorkGridItem
-            id="fourpainters"
-            title="The four painters"
-            thumbnail={thumbFourPainters}
+            id="robot_dog"
+            title="Robot dog"
+            thumbnail={thumbrobotdog}
           >
-            A video work generated with deep learning, imitating famous four
-            painters like Van Gogh
+            A company I'am the founder of where we make open source quadraped robots.
           </WorkGridItem>
         </Section>
         <Section delay={0.1}>
-          <WorkGridItem id="menkiki" thumbnail={thumbMenkiki} title="Menkiki">
-            An app that suggests ramen(noodle) shops based on a given photo of
-            the ramen you want to eat
+          <WorkGridItem
+            id="Tensorflow"
+            title="Tensorflow"
+            thumbnail={thumbtensorflow}
+            >
+            Missalanious tensorflow projects that solve diffrent issues
+          </WorkGridItem>
+        </Section>
+        <Section delay={0.1}>
+          <WorkGridItem
+            id="AIclub"
+            title="AI club"
+            thumbnail={thumbaiclub}
+            >
+            The final AI club website chatbot with a similiar stack to this website.
           </WorkGridItem>
         </Section>
       </SimpleGrid>
-
       <Section delay={0.2}>
         <Divider my={6} />
 
         <Heading as="h3" fontSize={20} mb={4}>
-          Collaborations
+          Sub-Works
         </Heading>
       </Section>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section delay={0.3}>
-          <WorkGridItem id="margelo" thumbnail={thumbMargelo} title="Margelo">
-            A website of the elite app development and contracting agency based
-            in Austria
+          <WorkGridItem
+            id="kinematics"
+            thumbnail={thumbkinematics}
+            title="Kinematics for robot dog"
+            >
+            The calculations that where necassery for the development of the robot dog
           </WorkGridItem>
         </Section>
         <Section delay={0.3}>
           <WorkGridItem
-            id="modetokyo"
-            thumbnail={thumbModeTokyo}
-            title="mode.tokyo"
+            id="andriod"
+            thumbnail={thumbandriod}
+            title="Andriod apps"
           >
-            The mode magazine for understanding to personally enjoy Japan
+            [insert andriod app description]
           </WorkGridItem>
         </Section>
         <Section delay={0.3}>
-          <WorkGridItem id="styly" thumbnail={thumbStyly} title="Styly">
-            A VR Creative tools for fashion brands
-          </WorkGridItem>
-        </Section>
-      </SimpleGrid>
-
-      <Section delay={0.4}>
-        <Divider my={6} />
-
-        <Heading as="h3" fontSize={20} mb={4}>
-          Old works
-        </Heading>
-      </Section>
-
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section delay={0.5}>
-          <WorkGridItem id="pichu2" thumbnail={thumbPichu2} title="Pichu*Pichu">
-            Twitter client app for iPhone Safari
-          </WorkGridItem>
-        </Section>
-        <Section delay={0.5}>
           <WorkGridItem
-            id="freedbtagger"
-            thumbnail={thumbFreeDBTagger}
-            title="freeDBTagger"
-          >
-            Automatic audio file tagging tool using FreeDB for Windows
+            id="pcbuilds"
+            thumbnail={thumbpcbuilds}
+            title="PC / Server builds"
+            >
+            A list of all builds and my home network
           </WorkGridItem>
         </Section>
-        <Section delay={0.6}>
-          <WorkGridItem id="amembo" thumbnail={thumbAmembo} title="Amembo">
-            P2P private file sharing tool with MSN Messenger integration for
-            Windows
+        <Section delay={0.3}>
+          <WorkGridItem
+            id="crypto_mining"
+            thumbnail={thumbminers}
+            title="Crypto Mining"
+            >
+            A Crypto mining buissness I started.
           </WorkGridItem>
         </Section>
       </SimpleGrid>
+
+
     </Container>
   </Layout>
 )

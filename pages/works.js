@@ -45,7 +45,7 @@ const Works = () => (
             title="Robot dog"
             thumbnail={thumbrobotdog}
           >
-            A company I'am the founder of where we make open source quadraped robots.
+            A company I&apos;am the founder of where we make open source quadraped robots.
           </WorkGridItem>
         </Section>
         <Section delay={0.1}>

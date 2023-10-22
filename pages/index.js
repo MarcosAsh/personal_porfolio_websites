@@ -85,7 +85,7 @@ const Home = () => (
           <Link as={NextLink} href="/works/robot_dog" passHref scroll={false}>
             Robot dog
           </Link>
-          . You can also view my EPQ (extended project qualification) here: "
+          . You can also view my EPQ (extended project qualification) here: &quot;
           <Link as={NextLink} href="/works/EPQ" passHref scroll={false}>
             EPQ
           </Link>

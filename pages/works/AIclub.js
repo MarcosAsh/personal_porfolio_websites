@@ -18,7 +18,7 @@ const Work = () => (
       </Title>
       <P>
         This is the website I made for the AI club in the end of 2023. This was a group project
-        for more information look at the GitHub.
+        for more information look at GitHub.
       </P>
 
       <List ml={4} my={4}>

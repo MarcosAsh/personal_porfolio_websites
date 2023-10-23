@@ -171,18 +171,18 @@ const Home = () => (
 
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
-            href="works\inkdrop"
+            href="works\EPQ"
             title="EPQ"
             thumbnail={thumbYouTube}
           >
             My Extended Project Qualification
           </GridItem>
           <GridItem
-            href="works\fourpainters"
+            href="works\robot_dog"
             title="Robotics Company"
             thumbnail={thumbInkdrop}
           >
-            A ground-breaking quadraped design
+            A robot quadruped design
           </GridItem>
         </SimpleGrid>
 

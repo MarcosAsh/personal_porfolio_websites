@@ -26,7 +26,7 @@ const Works = () => (
             title="EPQ"
             thumbnail={thumbepq}
             >
-            A machine learning model that predicts the crop yeild from certain data.
+            A machine learning model that predicts the crop yield from certain data.
           </WorkGridItem>
         </Section>
         <Section>
@@ -45,7 +45,7 @@ const Works = () => (
             title="Robot dog"
             thumbnail={thumbrobotdog}
           >
-            A company I&apos;am the founder of where we make open source quadraped robots.
+            A company I&apos;am the founder of where we make open-source quadruped robots.
           </WorkGridItem>
         </Section>
         <Section delay={0.1}>
@@ -54,7 +54,7 @@ const Works = () => (
             title="Tensorflow"
             thumbnail={thumbtensorflow}
             >
-            Missalanious tensorflow projects that solve diffrent issues
+            Miscellaneous tensorflow projects that solve different issues
           </WorkGridItem>
         </Section>
         <Section delay={0.1}>
@@ -63,7 +63,7 @@ const Works = () => (
             title="AI club"
             thumbnail={thumbaiclub}
             >
-            The final AI club website chatbot with a similiar stack to this website.
+            The final AI club website chatbot has a similar stack to this website.
           </WorkGridItem>
         </Section>
       </SimpleGrid>
@@ -82,7 +82,7 @@ const Works = () => (
             thumbnail={thumbkinematics}
             title="Kinematics for robot dog"
             >
-            The calculations that where necassery for the development of the robot dog
+            The calculations that were necessary for the development of the robot dog
           </WorkGridItem>
         </Section>
         <Section delay={0.3}>
@@ -109,7 +109,7 @@ const Works = () => (
             thumbnail={thumbminers}
             title="Crypto Mining"
             >
-            A Crypto mining buissness I started.
+            A Crypto mining business I started.
           </WorkGridItem>
         </Section>
       </SimpleGrid>

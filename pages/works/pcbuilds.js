@@ -21,7 +21,7 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>OS</Meta>
-          <span>DUal boot windows 11 / ubuntu</span>
+          <span>Dual boot windows 11 / ubuntu</span>
         </ListItem>
         <ListItem>
           <Meta>Prfered IDE</Meta>
@@ -36,7 +36,7 @@ const Work = () => (
       </ListItem>
         <ListItem>
           <Meta>GPU</Meta>
-          rtx 3060 ti FE
+          RTX 3060 ti FE
         </ListItem>
         <ListItem>
           <Meta>Case</Meta>
@@ -55,11 +55,11 @@ const Work = () => (
         </ListItem>
         <ListItem>
           <Meta>GPU</Meta>
-          Gigabyte rtx 2080 super 
+          Gigabyte RTX 2080 super 
         </ListItem>
         <ListItem>
           <Meta>Case</Meta>
-          Fractal Torrent Comapct
+          Fractal Torrent Compact
         </ListItem>
         <ListItem>
           <Meta>MOBO</Meta>

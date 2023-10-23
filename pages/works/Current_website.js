@@ -17,7 +17,7 @@ const Work = () => (
         This website <Badge>Summer 2023</Badge>
       </Title>
       <P>
-        This website is produced by me and is personal portfolio.
+        This website is produced by me and is personal my portfolio.
       </P>
 
       <List ml={4} my={4}>
@@ -30,9 +30,9 @@ const Work = () => (
           <span>Next.js, Chakra UI, Three.js and Framer Motion</span>
         </ListItem>
         <ListItem>
-          <Meta>Inspiriation</Meta>
-          <Link href="https://github.com/craftzdog">
-            Inspiriation to website design
+          <Meta>Deployed by</Meta>
+          <Link href="https://www.netlify.com/">
+            netfily
             <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>

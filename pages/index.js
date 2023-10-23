@@ -79,9 +79,9 @@ const Home = () => (
           Work
         </Heading>
         <Paragraph>
-          Iam a student and programmer proficient in Unity, React, Flask, Python, TensorFlow
+          I am a student and programmer proficient in Unity, React, Flask, Python, TensorFlow
            and next.js. I am also a founder of a robotics company
-          currently protoyping a quadraped robot with great prospects in the private field. You can see my robot here: {' '}
+          currently prototyping a quadruped robot with great prospects in the private field. You can see my robot here: {' '}
           <Link as={NextLink} href="/works/robot_dog" passHref scroll={false}>
             Robot dog
           </Link>
@@ -89,7 +89,7 @@ const Home = () => (
           <Link as={NextLink} href="/works/EPQ" passHref scroll={false}>
             EPQ
           </Link>
-          &quot; which has a series of applications in the agricultural secter.
+          &quot; which has a series of applications in the agricultural sector.
         </Paragraph>
         <Box align="center" my={4}>
           <Button

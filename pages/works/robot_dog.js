@@ -17,7 +17,7 @@ const Work = () => (
         Robot dog <Badge>September 2022 - Ongoing</Badge>
       </Title>
       <P>
-        A quadraped robot that uses nvdias jetson nano to process the enviroment
+        A quadruped robot that uses Nvidia Jetson Nano to process the environment
         in real time.
       </P>
       <List ml={4} my={4}>
@@ -28,7 +28,7 @@ const Work = () => (
         <ListItem>
           <Meta>Website</Meta>
           <Link href="">
-            The Notion made website where I explain the project
+            The Notion-made website where I explain the project
             <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
@@ -41,7 +41,7 @@ const Work = () => (
         <ListItem>
           <Meta>Github (softwarte)</Meta>
           <Link href="https://github.com/MarcosAsh/Robot_Dog">
-            software for the robot dogs functionality
+            software for the robot dog's functionality
             <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
@@ -49,7 +49,7 @@ const Work = () => (
           <Meta>notice</Meta>
           <P>
             Notice that the Github is private as it took a lot of work and I
-            believe it could be comercialy viable if intrested in details, Iam
+            believe it could be commercially viable if interested in details, I am
             more than happy to explain. Just contact my email address, found at
             bottom of this website.
           </P>

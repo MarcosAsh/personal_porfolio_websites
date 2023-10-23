@@ -40,7 +40,7 @@ const Work = () => (
           <Meta>Video</Meta>
           <P>
             <Link href="https://www.youtube.com/watch?v=vGOvUoqn_M8&ab_channel=Artificialintelligence" target="_blank">
-              This video was pivital in the development of the project.<ExternalLinkIcon mx="2px" />
+              This video was pivotal in the development of the project.<ExternalLinkIcon mx="2px" />
             </Link>
           </P>
         </ListItem>
@@ -48,7 +48,7 @@ const Work = () => (
           <Meta>Github</Meta>
           <P>
             <Link href="https://github.com/MarcosAsh/EPQ_crop_yeild_AI" target="_blank">
-              This is the github.<ExternalLinkIcon mx="2px" />
+              This is the GitHub.<ExternalLinkIcon mx="2px" />
             </Link>
           </P>
         </ListItem>

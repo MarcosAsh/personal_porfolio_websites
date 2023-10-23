@@ -17,11 +17,11 @@ const Work = () => (
         Kinematics for robot dog<Badge>2023</Badge>
       </Title>
       <P>
-        Therse are the calculations for the kinematics of my robot dog.
+        These are the calculations for the kinematics of my robot dog.
       </P>
       <P>
         <Link href="https://www.youtube.com/watch?v=dHjWVlfNraM&ab_channel=TheOrganicChemistryTutor" target="_blank">
-          I would like to thank Organic Chemistry Tutor as this video helped me to complete the project. <ExternalLinkIcon mx="2px" />
+          I would like to thank the Organic Chemistry Tutor as this video helped me to complete the project. <ExternalLinkIcon mx="2px" />
         </Link>
             These calculations are general so anybody who needs them is more than welcome to take them.
       </P>

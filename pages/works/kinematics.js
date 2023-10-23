@@ -21,7 +21,7 @@ const Work = () => (
       </P>
       <P>
         <Link href="https://www.youtube.com/watch?v=dHjWVlfNraM&ab_channel=TheOrganicChemistryTutor" target="_blank">
-          I would like to thank Organic Chemistry Tutor as this video helped me to complete the proyect. <ExternalLinkIcon mx="2px" />
+          I would like to thank Organic Chemistry Tutor as this video helped me to complete the project. <ExternalLinkIcon mx="2px" />
         </Link>
             These calculations are general so anybody who needs them is more than welcome to take them.
       </P>

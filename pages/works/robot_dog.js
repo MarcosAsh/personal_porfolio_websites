@@ -41,7 +41,7 @@ const Work = () => (
         <ListItem>
           <Meta>Github (softwarte)</Meta>
           <Link href="https://github.com/MarcosAsh/Robot_Dog">
-            software for the robot dog's functionality
+            software for the robot dogs functionality
             <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>

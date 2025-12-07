@@ -37,7 +37,7 @@ const Home = () => (
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         css={{ backdropFilter: 'blur(10px)' }}
       >
-        Hello I&apos;am a Spanish developer
+        Hello I&apos;m a Spanish developer studying Computer Science at University of Exeter
       </Box>
 
       <Box display={{ md: 'flex' }}>
@@ -45,7 +45,7 @@ const Home = () => (
           <Heading as="h2" variant="page-title">
             Marcos Ashton
           </Heading>
-          <p>Student and programmer </p>
+          <p>Computer Science Student & Programmer</p>
         </Box>
         <Box
           flexShrink={0}
@@ -76,20 +76,22 @@ const Home = () => (
 
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
-          Work
+          About
         </Heading>
         <Paragraph>
-          I am a student and programmer proficient in Unity, React, Flask, Python, TensorFlow
-           and next.js. I am also a founder of a robotics company
-          currently prototyping a quadruped robot with great prospects in the private field. You can see my robot here: {' '}
+          I am a Computer Science student at the University of Exeter. 
+          I&apos;m proficient in Python, C, C++, and web technologies including HTML, CSS, JavaScript, 
+          Next.js, and React. I have hands-on experience with Jetson Nano, LIDAR, TensorFlow, Docker, 
+          AWS, and Modal. I&apos;m also the founder of a robotics company where I designed and 
+          implemented an autonomous robotic dog with real-time LIDAR navigation. You can see my 
+          robot here:{' '}
           <Link as={NextLink} href="/works/robot_dog" passHref scroll={false}>
             Robot dog
           </Link>
-          . You can also view my EPQ (extended project qualification) here: &quot;
+          . I also completed an EPQ on machine learning for agricultural applications:{' '}
           <Link as={NextLink} href="/works/EPQ" passHref scroll={false}>
             EPQ
           </Link>
-          &quot; which has a series of applications in the agricultural sector.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
@@ -118,25 +120,79 @@ const Home = () => (
         </BioSection>
         <BioSection>
           <BioYear>2022</BioYear>
-          Started my EPQ
+          Started my EPQ (Extended Project Qualification)
         </BioSection>
         <BioSection>
-          <BioYear>2023 to present</BioYear>
-          Started making Websites
+          <BioYear>2023</BioYear>
+          Started developing websites and web applications
         </BioSection>
         <BioSection>
           <BioYear>2024</BioYear>
           Graduated from Hastings School
         </BioSection>
+        <BioSection>
+          <BioYear>2024 to present</BioYear>
+          Studying BSc Computer Science at University of Exeter
+        </BioSection>
+      </Section>
+
+      <Section delay={0.25}>
+        <Heading as="h3" variant="section-title">
+          Skills
+        </Heading>
+        <Paragraph>
+          <strong>Programming:</strong> Python, C, C++, HTML, CSS, JavaScript, Java
+        </Paragraph>
+        <Paragraph>
+          <strong>Tools & Technologies:</strong> Jetson Nano, LIDAR, Next.js, TensorFlow, 
+          Scikit-learn, Docker (certified), AWS, Modal, Git, GitHub, ROS
+        </Paragraph>
+        <Paragraph>
+          <strong>Languages:</strong> English (fluent), Spanish (fluent)
+        </Paragraph>
       </Section>
 
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
-          My passions
+          Highlighted Projects
         </Heading>
         <Paragraph>
-          Machine learning, Computer Hardware, Crypto mining, Mathematics, Computer architecture, Computer science,
-          Robotics and Basketball.
+          <strong>Spot Micro AI Dog:</strong> Designed and implemented an autonomous robotic dog 
+          with real-time LIDAR navigation and obstacle detection.
+        </Paragraph>
+        <Paragraph>
+          <strong>Fluid Dynamics Simulation:</strong> Developed a 3D fluid simulation in C using 
+          Navier-Stokes equations with AWS and Modal backend.
+        </Paragraph>
+        <Paragraph>
+          <strong>Satellite Telemetry for Crop Prediction:</strong> Built ML models achieving 70.4% 
+          accuracy predicting avocado crop yields using historical satellite data.
+        </Paragraph>
+        <Paragraph>
+          <strong>Chess Engine:</strong> Developed a C++ chess engine achieving an 800 rating on Lichess.
+        </Paragraph>
+      </Section>
+
+      <Section delay={0.35}>
+        <Heading as="h3" variant="section-title">
+          Hackathons
+        </Heading>
+        <Paragraph>
+          <strong>Nebrija:</strong> Placed 10th overall from 150 competitors
+        </Paragraph>
+        <Paragraph>
+          <strong>Movember:</strong> First place - Created an image classifier for skin cancer 
+          prediction with 80% accuracy
+        </Paragraph>
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          My Interests
+        </Heading>
+        <Paragraph>
+          Machine Learning, Computer Hardware, Cryptocurrency Mining, Mathematics, 
+          Computer Architecture, Robotics, and Basketball.
         </Paragraph>
       </Section>
 
@@ -190,7 +246,7 @@ const Home = () => (
           Contact me
         </Heading>
         <p>
-          If you have any questions please contact me.
+          If you have any questions or opportunities, please feel free to contact me.
         </p>
 
         <Box align="center" my={4}>

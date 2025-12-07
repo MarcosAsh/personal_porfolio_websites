@@ -12,6 +12,9 @@ import thumbandriod from '../public/images/andriod.png'
 import thumbpcbuilds from '../public/images/torrent.jpeg'
 import thumbminers from '../public/images/miner.jpg'
 import thumbaiclub from '../public/images/aiclub.jpg'
+import thumbfluidsim from '../public/images/links/Current-website.jpg' // Add your fluid sim image
+import thumbchess from '../public/images/links/Current-website.jpg' // Add your chess image
+
 const Works = () => (
   <Layout title="Works">
     <Container>
@@ -22,56 +25,80 @@ const Works = () => (
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
           <WorkGridItem
-            id="EPQ"
-            title="EPQ"
-            thumbnail={thumbepq}
-            >
-            A machine learning model that predicts the crop yield from certain data.
+            id="robot_dog"
+            title="Spot Micro AI Dog"
+            thumbnail={thumbrobotdog}
+          >
+            Autonomous robotic dog with real-time LIDAR navigation and sensor fusion for obstacle detection
           </WorkGridItem>
         </Section>
+        
         <Section>
           <WorkGridItem
-            id="Current_website"
-            title="This website"
-            thumbnail={thumbcurrentwebsite}
-            >
-            The website you are currently on
+            id="fluid_sim"
+            title="Fluid Dynamics Simulation"
+            thumbnail={thumbfluidsim}
+          >
+            3D fluid simulation in C using Navier-Stokes equations with AWS and Modal backend
           </WorkGridItem>
         </Section>
 
         <Section delay={0.1}>
           <WorkGridItem
-            id="robot_dog"
-            title="Robot dog"
-            thumbnail={thumbrobotdog}
-          >
-            A company I&apos;am the founder of where we make open-source quadruped robots.
+            id="EPQ"
+            title="Satellite Telemetry for Crop Prediction"
+            thumbnail={thumbepq}
+            >
+            Machine learning model achieving 70.4% accuracy predicting avocado crop yields
           </WorkGridItem>
         </Section>
+        
         <Section delay={0.1}>
           <WorkGridItem
-            id="Tensorflow"
-            title="Tensorflow"
-            thumbnail={thumbtensorflow}
+            id="chess_engine"
+            title="Chess Engine"
+            thumbnail={thumbchess}
             >
-            Miscellaneous tensorflow projects that solve different issues
+            C++ chess engine with move evaluation and pruning algorithms (800 Lichess rating)
           </WorkGridItem>
         </Section>
+        
+        <Section delay={0.1}>
+          <WorkGridItem
+            id="Current_website"
+            title="Personal Portfolio Website"
+            thumbnail={thumbcurrentwebsite}
+            >
+            Responsive portfolio with 3D animations using Next.js, Three.js, and Chakra UI
+          </WorkGridItem>
+        </Section>
+        
         <Section delay={0.1}>
           <WorkGridItem
             id="AIclub"
-            title="AI club"
+            title="AI Club Website"
             thumbnail={thumbaiclub}
             >
-            The final AI club website chatbot has a similar stack to this website.
+            Interactive AI club website with chatbot integration
+          </WorkGridItem>
+        </Section>
+        
+        <Section delay={0.1}>
+          <WorkGridItem
+            id="Tensorflow"
+            title="TensorFlow Projects"
+            thumbnail={thumbtensorflow}
+            >
+            Collection of deep learning and computer vision projects using TensorFlow
           </WorkGridItem>
         </Section>
       </SimpleGrid>
+      
       <Section delay={0.2}>
         <Divider my={6} />
 
         <Heading as="h3" fontSize={20} mb={4}>
-          Sub-Works
+          Additional Projects
         </Heading>
       </Section>
 
@@ -80,36 +107,36 @@ const Works = () => (
           <WorkGridItem
             id="kinematics"
             thumbnail={thumbkinematics}
-            title="Kinematics for robot dog"
+            title="Kinematics for Robot Dog"
             >
-            The calculations that were necessary for the development of the robot dog
+            Mathematical calculations and algorithms for robotic locomotion
           </WorkGridItem>
         </Section>
         <Section delay={0.3}>
           <WorkGridItem
             id="andriod"
             thumbnail={thumbandriod}
-            title="Andriod apps"
+            title="Android Applications"
           >
-            [insert andriod app description]
+            Mobile applications developed for Android platform
           </WorkGridItem>
         </Section>
         <Section delay={0.3}>
           <WorkGridItem
             id="pcbuilds"
             thumbnail={thumbpcbuilds}
-            title="PC / Server builds"
+            title="PC / Server Builds"
             >
-            A list of all builds and my home network
+            Custom PC builds and home network infrastructure
           </WorkGridItem>
         </Section>
         <Section delay={0.3}>
           <WorkGridItem
             id="crypto_mining"
             thumbnail={thumbminers}
-            title="Crypto Mining"
+            title="Cryptocurrency Mining"
             >
-            A Crypto mining business I started.
+            Cryptocurrency mining operation with multiple ASIC and GPU miners
           </WorkGridItem>
         </Section>
       </SimpleGrid>

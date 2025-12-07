@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
-import { IoLogoGithub } from 'react-icons/io5'
+import { IoLogoGithub, IoDocumentText } from 'react-icons/io5'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -28,9 +28,15 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
       href={href}
       scroll={false}
       p={2}
-      bg={active ? 'grassTeal' : undefined}
-      color={active ? '#202023' : inactiveColor}
+      bg={active ? 'cyan.500' : undefined}
+      color={active ? 'white' : inactiveColor}
+      borderRadius="md"
       target={target}
+      fontWeight={active ? 'semibold' : 'normal'}
+      _hover={{
+        bg: active ? 'cyan.600' : useColorModeValue('gray.100', 'whiteAlpha.200'),
+        textDecoration: 'none'
+      }}
       {...props}
     >
       {children}
@@ -50,9 +56,10 @@ const Navbar = props => {
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={useColorModeValue('rgba(255, 255, 255, 0.85)', 'rgba(26, 26, 46, 0.85)')}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={2}
+      boxShadow="sm"
       {...props}
     >
       <Container
@@ -76,12 +83,10 @@ const Navbar = props => {
           alignItems="center"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
+          spacing={2}
         >
           <LinkItem href="/works" path={path}>
             Works
-          </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Websites
           </LinkItem>
           <LinkItem
             target="_blank"
@@ -93,7 +98,7 @@ const Navbar = props => {
             pl={2}
           >
             <IoLogoGithub />
-            Github
+            GitHub
           </LinkItem>
         </Stack>
 
@@ -110,19 +115,17 @@ const Navbar = props => {
               />
               <MenuList>
                 <MenuItem as={MenuLink} href="/">
-                  About
+                  Home
                 </MenuItem>
                 <MenuItem as={MenuLink} href="/works">
                   Works
                 </MenuItem>
-                <MenuItem as={MenuLink} href="/posts">
-                  Posts
-                </MenuItem>
                 <MenuItem
                   as={Link}
                   href="https://github.com/MarcosAsh"
+                  target="_blank"
                 >
-                  Github
+                  GitHub
                 </MenuItem>
               </MenuList>
             </Menu>

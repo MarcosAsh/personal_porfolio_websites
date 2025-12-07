@@ -8,11 +8,10 @@ import thumbtensorflow from '../public/images/TENSORFLOW.jpg'
 import thumbrobotdog from '../public/images/robot_dog.png'
 import thumbcurrentwebsite from '../public/images/links/Current-website.jpg'
 import thumbkinematics from '../public/images/kinematics.jpg'
+import thumbandroid from '../public/images/andriod.png'
 import thumbpcbuilds from '../public/images/torrent.jpeg'
 import thumbminers from '../public/images/miner.jpg'
 import thumbaiclub from '../public/images/aiclub.jpg'
-import thumbfluidsim from '../public/images/3dfluids.png'
-import thumbchess from '../public/images/chess.png'
 
 const Works = () => (
   <Layout title="Works">
@@ -45,7 +44,7 @@ const Works = () => (
             <WorkGridItem
               id="fluid_sim"
               title="Fluid Dynamics Simulation"
-              thumbnail={thumbfluidsim}
+              thumbnail={thumbcurrentwebsite}
             >
               3D fluid simulation in C using Navier-Stokes equations with AWS and Modal backend
             </WorkGridItem>
@@ -65,7 +64,7 @@ const Works = () => (
             <WorkGridItem
               id="chess_engine"
               title="Chess Engine"
-              thumbnail={thumbchess}
+              thumbnail={thumbcurrentwebsite}
             >
               C++ chess engine with move evaluation and pruning algorithms achieving 800 Lichess rating
             </WorkGridItem>
@@ -138,6 +137,15 @@ const Works = () => (
           Hardware & Infrastructure
         </Heading>
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          <Section delay={0.4}>
+            <WorkGridItem
+              id="android"
+              thumbnail={thumbandroid}
+              title="Android Applications"
+            >
+              Mobile applications developed for the Android platform
+            </WorkGridItem>
+          </Section>
           <Section delay={0.4}>
             <WorkGridItem
               id="pcbuilds"

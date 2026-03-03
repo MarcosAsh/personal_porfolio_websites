@@ -14,14 +14,20 @@ const Posts = () => (
       <Heading as="h3" fontSize={20} mb={4}>
         Web Projects
       </Heading>
-      
+
       <Text mb={6} color={useColorModeValue('gray.600', 'gray.400')}>
-        A showcase of websites and web applications I have developed, ranging from 
-        personal projects to collaborative efforts.
+        A showcase of websites and web applications I have developed, ranging from
+        personal projects to professional work.
       </Text>
 
       <Section delay={0.1}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          <GridItem
+            title="Klonvar (Internship)"
+            href="/works/klonvar"
+          >
+            Real estate web app — Next.js, TypeScript, Prisma, Chakra UI
+          </GridItem>
           <GridItem
             title="Personal Portfolio"
             thumbnail={thumbwebsite}

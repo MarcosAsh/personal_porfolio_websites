@@ -20,10 +20,10 @@ const Works = () => (
       <Heading as="h3" fontSize={20} mb={4}>
         Projects & Works
       </Heading>
-      
+
       <Text mb={6} color={useColorModeValue('gray.600', 'gray.400')}>
-        A collection of my technical projects, ranging from robotics and machine learning 
-        to web development and system building.
+        A collection of my technical projects, open source contributions, professional
+        experience, and academic work.
       </Text>
 
       <Box mb={6}>
@@ -33,6 +33,15 @@ const Works = () => (
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section>
             <WorkGridItem
+              id="llms_unlocked"
+              title="LLMs Unlocked"
+            >
+              ~50,000 lines of C++ from-scratch LLM framework with custom autodiff, transformer blocks, and visual graph editor
+            </WorkGridItem>
+          </Section>
+
+          <Section>
+            <WorkGridItem
               id="robot_dog"
               title="Spot Micro AI Dog"
               thumbnail={thumbrobotdog}
@@ -40,8 +49,8 @@ const Works = () => (
               Autonomous robotic quadruped with real-time LIDAR navigation and sensor fusion for obstacle detection
             </WorkGridItem>
           </Section>
-          
-          <Section>
+
+          <Section delay={0.1}>
             <WorkGridItem
               id="fluid_sim"
               title="Fluid Dynamics Simulation"
@@ -53,21 +62,102 @@ const Works = () => (
 
           <Section delay={0.1}>
             <WorkGridItem
-              id="EPQ"
-              title="Satellite Crop Prediction"
-              thumbnail={thumbepq}
-            >
-              Machine learning model achieving 70.4% accuracy predicting avocado crop yields using satellite telemetry
-            </WorkGridItem>
-          </Section>
-          
-          <Section delay={0.1}>
-            <WorkGridItem
               id="chess_engine"
               title="Chess Engine"
               thumbnail={thumbchess}
             >
               C++ chess engine with move evaluation and pruning algorithms achieving 800 Lichess rating
+            </WorkGridItem>
+          </Section>
+
+          <Section delay={0.15}>
+            <WorkGridItem
+              id="interpreter_in_go"
+              title="Interpreter in Go"
+            >
+              Custom scripting language with lexer, parser, and tree-walking interpreter built in Go
+            </WorkGridItem>
+          </Section>
+        </SimpleGrid>
+      </Box>
+
+      <Divider my={6} />
+
+      <Box mb={6}>
+        <Heading as="h4" fontSize={16} mb={4} color="cyan.500">
+          Open Source Contributions
+        </Heading>
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          <Section delay={0.15}>
+            <WorkGridItem
+              id="keras"
+              title="Keras (Google)"
+            >
+              15+ merged PRs — GRU/LSTM layers, SSIM, distance transform, B-spline interpolation, and more
+            </WorkGridItem>
+          </Section>
+
+          <Section delay={0.15}>
+            <WorkGridItem
+              id="gsoc"
+              title="Google Summer of Code 2026"
+            >
+              Applying with FFmpeg (FATE test coverage) and Rust Foundation (cargo-semver-checks lints)
+            </WorkGridItem>
+          </Section>
+        </SimpleGrid>
+      </Box>
+
+      <Divider my={6} />
+
+      <Box mb={6}>
+        <Heading as="h4" fontSize={16} mb={4} color="cyan.500">
+          Experience
+        </Heading>
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          <Section delay={0.2}>
+            <WorkGridItem
+              id="klonvar"
+              title="Klonvar (Internship)"
+            >
+              Real estate web application — Next.js, TypeScript, Prisma, Chakra UI
+            </WorkGridItem>
+          </Section>
+        </SimpleGrid>
+      </Box>
+
+      <Divider my={6} />
+
+      <Box mb={6}>
+        <Heading as="h4" fontSize={16} mb={4} color="cyan.500">
+          Academic Work
+        </Heading>
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          <Section delay={0.25}>
+            <WorkGridItem
+              id="knee_oa"
+              title="Knee OA Grading (AI)"
+            >
+              Deep learning for knee osteoarthritis severity classification — 71.7% accuracy with Xception
+            </WorkGridItem>
+          </Section>
+
+          <Section delay={0.25}>
+            <WorkGridItem
+              id="ad_review"
+              title="Automatic Differentiation Review"
+            >
+              Literature review on AD theory across TensorFlow, PyTorch, and JAX
+            </WorkGridItem>
+          </Section>
+
+          <Section delay={0.25}>
+            <WorkGridItem
+              id="EPQ"
+              title="Satellite Crop Prediction"
+              thumbnail={thumbepq}
+            >
+              Machine learning model achieving 70.4% accuracy predicting avocado crop yields using satellite telemetry
             </WorkGridItem>
           </Section>
         </SimpleGrid>
@@ -80,7 +170,7 @@ const Works = () => (
           Web Development
         </Heading>
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          <Section delay={0.2}>
+          <Section delay={0.3}>
             <WorkGridItem
               id="Current_website"
               title="Personal Portfolio"
@@ -89,8 +179,8 @@ const Works = () => (
               Responsive portfolio with 3D animations using Next.js, Three.js, and Chakra UI
             </WorkGridItem>
           </Section>
-          
-          <Section delay={0.2}>
+
+          <Section delay={0.3}>
             <WorkGridItem
               id="AIclub"
               title="AI Club Website"
@@ -109,7 +199,7 @@ const Works = () => (
           Machine Learning & AI
         </Heading>
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          <Section delay={0.3}>
+          <Section delay={0.35}>
             <WorkGridItem
               id="Tensorflow"
               title="TensorFlow Projects"
@@ -118,8 +208,8 @@ const Works = () => (
               Collection of deep learning and computer vision projects including CNNs and model deployment
             </WorkGridItem>
           </Section>
-          
-          <Section delay={0.3}>
+
+          <Section delay={0.35}>
             <WorkGridItem
               id="kinematics"
               thumbnail={thumbkinematics}

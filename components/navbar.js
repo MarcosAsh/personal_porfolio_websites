@@ -85,9 +85,6 @@ const Navbar = props => {
           mt={{ base: 4, md: 0 }}
           spacing={2}
         >
-          <LinkItem href="/works" path={path}>
-            Works
-          </LinkItem>
           <LinkItem
             target="_blank"
             href="https://github.com/MarcosAsh"
@@ -116,9 +113,6 @@ const Navbar = props => {
               <MenuList>
                 <MenuItem as={MenuLink} href="/">
                   Home
-                </MenuItem>
-                <MenuItem as={MenuLink} href="/works">
-                  Works
                 </MenuItem>
                 <MenuItem
                   as={Link}

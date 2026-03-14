@@ -23,6 +23,7 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { IoLogoLinkedin, IoLogoGithub, IoDocumentText } from 'react-icons/io5'
 import Image from 'next/image'
+import SubstackFeed from '../components/substack-feed'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -92,16 +93,21 @@ const Home = () => (
             overflow="hidden"
             boxShadow="lg"
           >
-            <ProfileImage
-              src="/loogo.jfif"
+            <img
+              src="/loogo.jpg"
               alt="Profile image"
-              borderRadius="full"
-              width="110"
-              height="110"
+              style={{ borderRadius: '100%', width: '110px', height: '110px', objectFit: 'cover' }}
             />
           </Box>
         </Box>
       </Box>
+
+      <Section delay={0.05}>
+        <Heading as="h3" variant="section-title">
+          Writing
+        </Heading>
+        <SubstackFeed />
+      </Section>
 
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
@@ -291,6 +297,62 @@ const Home = () => (
             GSoC Details
           </Button>
         </Box>
+
+        <Divider my={4} />
+
+        <Box
+          p={4}
+          borderRadius="md"
+          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')}
+          mb={3}
+        >
+          <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
+            <Text fontWeight="bold" fontSize="sm">keras-team/keras</Text>
+            <Badge colorScheme="green" fontSize="xs">merged</Badge>
+          </Box>
+          <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')} mb={1}>
+            15+ merged pull requests covering the PyTorch and MLX backends, image operations, bug fixes, and benchmark infrastructure.
+          </Text>
+          <Link href="https://github.com/keras-team/keras" isExternal fontSize="xs" color="cyan.500">
+            github.com/keras-team/keras <ExternalLinkIcon mx="1px" />
+          </Link>
+        </Box>
+
+        <Box
+          p={4}
+          borderRadius="md"
+          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')}
+          mb={3}
+        >
+          <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
+            <Text fontWeight="bold" fontSize="sm">FFmpeg — GSoC 2026 applicant</Text>
+            <Badge colorScheme="yellow" fontSize="xs">GSoC 2026</Badge>
+          </Box>
+          <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')} mb={1}>
+            Active contributor on PR #22258, adding FATE test coverage for film_grain_params, stereo3d, and pcm_bluray decoders. Working through iterative reviewer feedback from core maintainers.
+          </Text>
+          <Link href="https://github.com/FFmpeg/FFmpeg" isExternal fontSize="xs" color="cyan.500">
+            github.com/FFmpeg/FFmpeg <ExternalLinkIcon mx="1px" />
+          </Link>
+        </Box>
+
+        <Box
+          p={4}
+          borderRadius="md"
+          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')}
+          mb={3}
+        >
+          <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
+            <Text fontWeight="bold" fontSize="sm">Rust Foundation — GSoC 2026 applicant</Text>
+            <Badge colorScheme="yellow" fontSize="xs">GSoC 2026</Badge>
+          </Box>
+          <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')} mb={1}>
+            Contributing to cargo-semver-checks, implementing type-checking lints to improve Rust API compatibility detection.
+          </Text>
+          <Link href="https://github.com/obi1kenobi/cargo-semver-checks" isExternal fontSize="xs" color="cyan.500">
+            github.com/obi1kenobi/cargo-semver-checks <ExternalLinkIcon mx="1px" />
+          </Link>
+        </Box>
       </Section>
 
       <Section delay={0.33}>
@@ -398,6 +460,12 @@ const Home = () => (
                 Interpreter in Go
               </Link>
             </ListItem>
+            <ListItem>
+              <Link as={NextLink} href="/works/saddle" color={useColorModeValue('gray.800', 'whiteAlpha.900')} _hover={{ color: 'cyan.500' }}>
+                Saddle
+              </Link>
+              {' '}<Link href="https://saddle-fawn.vercel.app" isExternal fontSize="xs" color="cyan.500">Live Demo <ExternalLinkIcon mx="1px" /></Link>
+            </ListItem>
           </List>
         </Box>
 
@@ -484,18 +552,6 @@ const Home = () => (
               </Button>
             </Link>
           </ListItem>
-          <ListItem>
-            <Link href="https://marcos-ashton-personal-portfolio.netlify.app/" target="_blank" isExternal>
-              <Button
-                variant="ghost"
-                colorScheme="cyan"
-                leftIcon={<IoDocumentText />}
-              >
-                Portfolio Website
-                <ExternalLinkIcon mx="2px" ml={2} />
-              </Button>
-            </Link>
-          </ListItem>
         </List>
 
         <Divider my={6} />
@@ -505,8 +561,7 @@ const Home = () => (
         </Heading>
         <Text mb={4}>
           I am open to opportunities in software development, open source, and
-          machine learning. Spanish citizen eligible to work in the UK under
-          a Student Visa.
+          machine learning.
         </Text>
 
         <Box align="center" my={4}>

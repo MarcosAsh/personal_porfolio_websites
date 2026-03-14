@@ -4,12 +4,9 @@ import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
 import thumbepq from '../public/images/EPQ.png'
-import thumbtensorflow from '../public/images/TENSORFLOW.jpg'
 import thumbrobotdog from '../public/images/robot_dog.png'
 import thumbcurrentwebsite from '../public/images/links/Current-website.jpg'
 import thumbkinematics from '../public/images/kinematics.jpg'
-import thumbpcbuilds from '../public/images/torrent.jpeg'
-import thumbminers from '../public/images/miner.jpg'
 import thumbaiclub from '../public/images/aiclub.jpg'
 import thumbfluidsim from '../public/images/3dfluids.png'
 import thumbchess from '../public/images/chess.png'
@@ -201,16 +198,6 @@ const Works = () => (
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section delay={0.35}>
             <WorkGridItem
-              id="Tensorflow"
-              title="TensorFlow Projects"
-              thumbnail={thumbtensorflow}
-            >
-              Collection of deep learning and computer vision projects including CNNs and model deployment
-            </WorkGridItem>
-          </Section>
-
-          <Section delay={0.35}>
-            <WorkGridItem
               id="kinematics"
               thumbnail={thumbkinematics}
               title="Robot Kinematics"
@@ -221,33 +208,6 @@ const Works = () => (
         </SimpleGrid>
       </Box>
 
-      <Divider my={6} />
-
-      <Box mb={6}>
-        <Heading as="h4" fontSize={16} mb={4} color="cyan.500">
-          Hardware & Infrastructure
-        </Heading>
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          <Section delay={0.4}>
-            <WorkGridItem
-              id="pcbuilds"
-              thumbnail={thumbpcbuilds}
-              title="PC & Server Builds"
-            >
-              Custom high-performance PC builds and home network infrastructure
-            </WorkGridItem>
-          </Section>
-          <Section delay={0.4}>
-            <WorkGridItem
-              id="crypto_mining"
-              thumbnail={thumbminers}
-              title="Cryptocurrency Mining"
-            >
-              Mining operation with multiple ASIC and GPU miners including Antminer KS3 and L7
-            </WorkGridItem>
-          </Section>
-        </SimpleGrid>
-      </Box>
     </Container>
   </Layout>
 )

@@ -30,15 +30,6 @@ const Works = () => (
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section>
             <WorkGridItem
-              id="llms_unlocked"
-              title="LLMs Unlocked"
-            >
-              ~50,000 lines of C++ from-scratch LLM framework with custom autodiff, transformer blocks, and visual graph editor
-            </WorkGridItem>
-          </Section>
-
-          <Section>
-            <WorkGridItem
               id="robot_dog"
               title="Spot Micro AI Dog"
               thumbnail={thumbrobotdog}
@@ -75,6 +66,15 @@ const Works = () => (
               Custom scripting language with lexer, parser, and tree-walking interpreter built in Go
             </WorkGridItem>
           </Section>
+
+          <Section delay={0.15}>
+            <WorkGridItem
+              id="saddle"
+              title="Saddle"
+            >
+              Personal project — see live demo
+            </WorkGridItem>
+          </Section>
         </SimpleGrid>
       </Box>
 
@@ -90,16 +90,16 @@ const Works = () => (
               id="keras"
               title="Keras (Google)"
             >
-              15+ merged PRs — GRU/LSTM layers, SSIM, distance transform, B-spline interpolation, and more
+              32 merged PRs — cuDNN GRU/LSTM for JAX & PyTorch, new ops, ONNX export, performance, correctness fixes
             </WorkGridItem>
           </Section>
 
           <Section delay={0.15}>
             <WorkGridItem
-              id="gsoc"
-              title="Google Summer of Code 2026"
+              id="ffmpeg"
+              title="FFmpeg"
             >
-              Applying with FFmpeg (FATE test coverage) and Rust Foundation (cargo-semver-checks lints)
+              8 merged PRs — FATE test coverage for libavutil and decoders, plus correctness fixes in libavfilter and libavutil
             </WorkGridItem>
           </Section>
         </SimpleGrid>
@@ -114,10 +114,10 @@ const Works = () => (
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section delay={0.2}>
             <WorkGridItem
-              id="klonvar"
-              title="Klonvar (Internship)"
+              id="featurespace"
+              title="Visa / Featurespace (Incoming Intern)"
             >
-              Real estate web application — Next.js, TypeScript, Prisma, Chakra UI
+              Incoming software engineering intern — real-time payments fraud and financial-crime prevention
             </WorkGridItem>
           </Section>
         </SimpleGrid>

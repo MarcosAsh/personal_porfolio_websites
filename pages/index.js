@@ -59,7 +59,7 @@ const Home = () => (
           Second-Year Computer Science Student at University of Exeter
         </Text>
         <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')} mt={1}>
-          Open Source Contributor (Keras) | Full-Stack Developer | ML Researcher
+          Open Source Contributor (Keras, FFmpeg) | Incoming Visa / Featurespace Intern | ML Researcher
         </Text>
       </Box>
 
@@ -73,7 +73,8 @@ const Home = () => (
           </Text>
           <Box mt={2}>
             <Badge colorScheme="green" mr={2}>Keras Contributor</Badge>
-            <Badge colorScheme="blue">GSoC 2026 Applicant</Badge>
+            <Badge colorScheme="purple" mr={2}>FFmpeg Contributor</Badge>
+            <Badge colorScheme="blue">Incoming Visa Intern</Badge>
           </Box>
         </Box>
         <Box
@@ -120,11 +121,12 @@ const Home = () => (
           and full-stack development.
         </Paragraph>
         <Paragraph>
-          I have contributed 15+ merged PRs to Keras (Google), implementing new layers
-          and operations across the PyTorch, JAX, and MLX backends. I am currently
-          applying to Google Summer of Code 2026 with FFmpeg and the Rust Foundation,
-          and working as a software development intern at Klonvar building a real estate
-          web application.
+          I have 32 merged PRs to Keras (Google), implementing new ops and RNN
+          backends across PyTorch and JAX, plus 8 merged patches to FFmpeg
+          covering FATE test coverage and correctness fixes in libavutil and
+          libavfilter. I am an incoming software engineering intern at
+          Featurespace, a Visa company that builds real-time payments fraud
+          and financial-crime prevention.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
@@ -166,9 +168,9 @@ const Home = () => (
             <WrapItem><SkillBadge>Keras</SkillBadge></WrapItem>
             <WrapItem><SkillBadge>TensorFlow</SkillBadge></WrapItem>
             <WrapItem><SkillBadge>PyTorch</SkillBadge></WrapItem>
+            <WrapItem><SkillBadge>JAX</SkillBadge></WrapItem>
             <WrapItem><SkillBadge>Next.js</SkillBadge></WrapItem>
             <WrapItem><SkillBadge>React</SkillBadge></WrapItem>
-            <WrapItem><SkillBadge>Prisma</SkillBadge></WrapItem>
             <WrapItem><SkillBadge>Chakra UI</SkillBadge></WrapItem>
             <WrapItem><SkillBadge>Scikit-learn</SkillBadge></WrapItem>
             <WrapItem><SkillBadge>Docker</SkillBadge></WrapItem>
@@ -231,13 +233,14 @@ const Home = () => (
           borderLeft="4px solid"
           borderColor="cyan.500"
         >
-          <Text fontWeight="bold">Klonvar — Software Development Intern</Text>
+          <Text fontWeight="bold">Visa (Featurespace) — Software Engineering Intern</Text>
           <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
-            2025 - Present | Next.js, TypeScript, Prisma, Chakra UI
+            Incoming, 2026 | Real-time payments fraud and financial-crime prevention
           </Text>
           <Text fontSize="sm" mt={2}>
-            Building a real estate web application. Built client portal with messaging
-            system and email notifications.
+            Incoming intern at Featurespace, a Visa company that builds adaptive
+            behavioural analytics for real-time fraud detection used by major
+            banks and payment networks.
           </Text>
         </Box>
       </Section>
@@ -254,9 +257,9 @@ const Home = () => (
           borderLeft="4px solid"
           borderColor="green.500"
         >
-          <Text fontWeight="bold">Keras (Google) — 15+ Merged PRs</Text>
+          <Text fontWeight="bold">Keras (Google) — 32 Merged PRs</Text>
           <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
-            GRU/LSTM layers, SSIM, distance transform, B-spline interpolation, bug fixes, testing
+            cuDNN GRU/LSTM for JAX & PyTorch, new ops (matrix_rank, pinv, geomspace, fold), CTC beam search, ONNX export, performance, correctness fixes
           </Text>
         </Box>
         <Box
@@ -265,11 +268,11 @@ const Home = () => (
           bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')}
           mb={4}
           borderLeft="4px solid"
-          borderColor="yellow.500"
+          borderColor="purple.500"
         >
-          <Text fontWeight="bold">GSoC 2026 Applicant</Text>
+          <Text fontWeight="bold">FFmpeg — 8 Merged PRs</Text>
           <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
-            FFmpeg (FATE test coverage) | Rust Foundation (cargo-semver-checks lints)
+            FATE test coverage for libavutil components and decoders, correctness fixes in libavfilter and libavutil
           </Text>
         </Box>
         <Box align="center" my={4}>
@@ -287,14 +290,14 @@ const Home = () => (
           </Button>
           <Button
             as={NextLink}
-            href="/works/gsoc"
+            href="/works/ffmpeg"
             scroll={false}
             rightIcon={<ChevronRightIcon />}
             colorScheme="cyan"
             variant="outline"
             size="sm"
           >
-            GSoC Details
+            FFmpeg Details
           </Button>
         </Box>
 
@@ -308,10 +311,10 @@ const Home = () => (
         >
           <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
             <Text fontWeight="bold" fontSize="sm">keras-team/keras</Text>
-            <Badge colorScheme="green" fontSize="xs">merged</Badge>
+            <Badge colorScheme="green" fontSize="xs">32 merged</Badge>
           </Box>
           <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')} mb={1}>
-            15+ merged pull requests covering the PyTorch and MLX backends, image operations, bug fixes, and benchmark infrastructure.
+            Across the JAX and PyTorch backends: cuDNN-backed RNN paths, new public ops, ONNX export work, performance optimisations, and a long tail of correctness and shape-handling fixes.
           </Text>
           <Link href="https://github.com/keras-team/keras" isExternal fontSize="xs" color="cyan.500">
             github.com/keras-team/keras <ExternalLinkIcon mx="1px" />
@@ -325,32 +328,14 @@ const Home = () => (
           mb={3}
         >
           <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
-            <Text fontWeight="bold" fontSize="sm">FFmpeg — GSoC 2026 applicant</Text>
-            <Badge colorScheme="yellow" fontSize="xs">GSoC 2026</Badge>
+            <Text fontWeight="bold" fontSize="sm">FFmpeg/FFmpeg</Text>
+            <Badge colorScheme="purple" fontSize="xs">8 merged</Badge>
           </Box>
           <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')} mb={1}>
-            Active contributor on PR #22258, adding FATE test coverage for film_grain_params, stereo3d, and pcm_bluray decoders. Working through iterative reviewer feedback from core maintainers.
+            FATE regression tests for libavutil components and decoders (film_grain_params, stereo3d, pcm_bluray, and more), plus correctness fixes in libavfilter and libavutil.
           </Text>
-          <Link href="https://github.com/FFmpeg/FFmpeg" isExternal fontSize="xs" color="cyan.500">
-            github.com/FFmpeg/FFmpeg <ExternalLinkIcon mx="1px" />
-          </Link>
-        </Box>
-
-        <Box
-          p={4}
-          borderRadius="md"
-          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')}
-          mb={3}
-        >
-          <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
-            <Text fontWeight="bold" fontSize="sm">Rust Foundation — GSoC 2026 applicant</Text>
-            <Badge colorScheme="yellow" fontSize="xs">GSoC 2026</Badge>
-          </Box>
-          <Text fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')} mb={1}>
-            Contributing to cargo-semver-checks, implementing type-checking lints to improve Rust API compatibility detection.
-          </Text>
-          <Link href="https://github.com/obi1kenobi/cargo-semver-checks" isExternal fontSize="xs" color="cyan.500">
-            github.com/obi1kenobi/cargo-semver-checks <ExternalLinkIcon mx="1px" />
+          <Link href="https://code.ffmpeg.org/FFmpeg/FFmpeg" isExternal fontSize="xs" color="cyan.500">
+            code.ffmpeg.org/FFmpeg/FFmpeg <ExternalLinkIcon mx="1px" />
           </Link>
         </Box>
       </Section>
@@ -381,11 +366,11 @@ const Home = () => (
         </BioSection>
         <BioSection>
           <BioYear>2025</BioYear>
-          Started contributing to Keras (Google), began Klonvar internship
+          Started contributing to Keras (Google)
         </BioSection>
         <BioSection>
           <BioYear>2026</BioYear>
-          Applying to GSoC 2026 (FFmpeg, Rust Foundation), building LLMs Unlocked framework
+          Began contributing to FFmpeg, accepted as incoming intern at Visa (Featurespace)
         </BioSection>
       </Section>
 
@@ -434,12 +419,6 @@ const Home = () => (
           </Text>
           <List spacing={1} ml={2}>
             <ListItem>
-              <Link as={NextLink} href="/works/llms_unlocked" color={useColorModeValue('gray.800', 'whiteAlpha.900')} _hover={{ color: 'cyan.500' }}>
-                LLMs Unlocked
-              </Link>
-              {' '}<Link href="https://frontend-marcosashs-projects.vercel.app/" isExternal fontSize="xs" color="cyan.500">Live Demo <ExternalLinkIcon mx="1px" /></Link>
-            </ListItem>
-            <ListItem>
               <Link as={NextLink} href="/works/robot_dog" color={useColorModeValue('gray.800', 'whiteAlpha.900')} _hover={{ color: 'cyan.500' }}>
                 Spot Micro AI Dog
               </Link>
@@ -480,8 +459,8 @@ const Home = () => (
               </Link>
             </ListItem>
             <ListItem>
-              <Link as={NextLink} href="/works/gsoc" color={useColorModeValue('gray.800', 'whiteAlpha.900')} _hover={{ color: 'cyan.500' }}>
-                Google Summer of Code 2026
+              <Link as={NextLink} href="/works/ffmpeg" color={useColorModeValue('gray.800', 'whiteAlpha.900')} _hover={{ color: 'cyan.500' }}>
+                FFmpeg
               </Link>
             </ListItem>
           </List>
@@ -493,8 +472,8 @@ const Home = () => (
           </Text>
           <List spacing={1} ml={2}>
             <ListItem>
-              <Link as={NextLink} href="/works/klonvar" color={useColorModeValue('gray.800', 'whiteAlpha.900')} _hover={{ color: 'cyan.500' }}>
-                Klonvar (Internship)
+              <Link as={NextLink} href="/works/featurespace" color={useColorModeValue('gray.800', 'whiteAlpha.900')} _hover={{ color: 'cyan.500' }}>
+                Visa / Featurespace (Incoming Intern)
               </Link>
             </ListItem>
           </List>
@@ -505,6 +484,12 @@ const Home = () => (
             Academic
           </Text>
           <List spacing={1} ml={2}>
+            <ListItem>
+              <Link href="https://zenodo.org/records/19709270" isExternal color={useColorModeValue('gray.800', 'whiteAlpha.900')} _hover={{ color: 'cyan.500' }}>
+                Differentiable Lattice Boltzmann Simulation (Zenodo preprint)
+              </Link>
+              {' '}<ExternalLinkIcon mx="1px" boxSize={3} color="cyan.500" />
+            </ListItem>
             <ListItem>
               <Link as={NextLink} href="/works/knee_oa" color={useColorModeValue('gray.800', 'whiteAlpha.900')} _hover={{ color: 'cyan.500' }}>
                 Knee OA Grading (AI)

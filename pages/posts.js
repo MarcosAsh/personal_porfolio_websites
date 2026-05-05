@@ -23,12 +23,6 @@ const Posts = () => (
       <Section delay={0.1}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
-            title="Klonvar (Internship)"
-            href="/works/klonvar"
-          >
-            Real estate web app — Next.js, TypeScript, Prisma, Chakra UI
-          </GridItem>
-          <GridItem
             title="Personal Portfolio"
             thumbnail={thumbwebsite}
             href="/works/Current_website"

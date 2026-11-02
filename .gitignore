@@ -6,3 +6,4 @@ forge/forge-asan
 # written by tools/metrics.py from the homelab, see content/status.sample.ini
 content/status.ini
 content/pulses.ini
+__pycache__/

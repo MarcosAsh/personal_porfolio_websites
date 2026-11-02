@@ -204,6 +204,10 @@ pre { margin: 0; font: inherit; }
 .p-cpu-raspberrypi pre { color: var(--new); }
 .p-cpu-optiplex-7040 pre { color: var(--papaya); }
 .axis { color: var(--done); }
+.k-table tr.st-err { color: var(--err); }
+.k-table tr.st-err.cursor, .k-table tr.st-err:hover { background: var(--err); }
+.k-table td.spark { letter-spacing: -0.05em; }
+.p-bench pre { color: var(--modify); }
 
 /* Dialogs: help, delete and the shell */
 .overlay { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 1rem; background: rgba(0, 0, 0, .55); }

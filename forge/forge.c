@@ -203,6 +203,7 @@ struct hint {
 
 static const struct hint views[] = {
     { "0", "projects", "/" }, { "1", "blog", "/blog/" }, { "2", "about", "/about/" }, { "3", "lab", "/lab/" },
+    { "4", "bench", "/bench/" },
 };
 
 static const struct hint list_hints[] = {
@@ -828,6 +829,278 @@ static void page_events(const struct ini *events)
     buf_free(&b), buf_free(&frame);
 }
 
+/* :bench, the Keras nightly benchmarks. content/bench/keras.csv holds every
+ * run (tools/bench.py keeps it); a series is one backend, device, model and
+ * mode, and its runs are in time order because the file is sorted by time. */
+struct run {
+    char  *time, *backend, *device, *model, *mode, *commit;
+    double sps;
+};
+
+struct series {
+    const struct run *first;
+    int              *idx, n;
+};
+
+static void chart(struct buf *b, const char *values);
+
+static struct run *bench_runs;
+static int nbench;
+
+static void load_bench(void)
+{
+    char *file = path(content_dir, "bench/keras.csv");
+
+    if (access(file, R_OK)) {
+        free(file);
+        return;
+    }
+    char *text = read_file(file, NULL);
+    for (char *line = text, *next; line && *line; line = next) {
+        char *eol = strchr(line, '\n');
+        next = eol ? eol + 1 : NULL;
+        if (eol)
+            *eol = '\0';
+        if (line == text)
+            continue; /* header */
+        char *f[7];
+        int nf = 0;
+        for (char *p = line; nf < 7; nf++) {
+            f[nf] = p;
+            if (!(p = strchr(p, ','))) {
+                nf++;
+                break;
+            }
+            *p++ = '\0';
+        }
+        if (nf < 6)
+            continue;
+        bench_runs = realloc(bench_runs, (size_t)(nbench + 1) * sizeof(*bench_runs));
+        if (!bench_runs)
+            die("out of memory");
+        bench_runs[nbench++] = (struct run){ f[0], f[1], f[2], f[3], f[4], nf > 6 ? f[6] : "", atof(f[5]) };
+    }
+    free(file);
+}
+
+static int same_series(const struct run *a, const struct run *b)
+{
+    return !strcmp(a->backend, b->backend) && !strcmp(a->device, b->device) &&
+           !strcmp(a->model, b->model) && !strcmp(a->mode, b->mode);
+}
+
+static struct series *group_bench(int *count)
+{
+    struct series *s = NULL;
+    int n = 0;
+
+    for (int i = 0; i < nbench; i++) {
+        int k = 0;
+        while (k < n && !same_series(s[k].first, &bench_runs[i]))
+            k++;
+        if (k == n) {
+            s = realloc(s, (size_t)(n + 1) * sizeof(*s));
+            if (!s)
+                die("out of memory");
+            s[n++] = (struct series){ &bench_runs[i], NULL, 0 };
+        }
+        s[k].idx = realloc(s[k].idx, (size_t)(s[k].n + 1) * sizeof(int));
+        if (!s[k].idx)
+            die("out of memory");
+        s[k].idx[s[k].n++] = i;
+    }
+    *count = n;
+    return s;
+}
+
+static void series_slug(struct buf *b, const struct run *r)
+{
+    buf_printf(b, "%s-%s-%s-%s", r->backend, r->device, r->model, r->mode);
+}
+
+static void rate(struct buf *b, double v)
+{
+    if (v >= 1e6)
+        buf_printf(b, "%.2fM", v / 1e6);
+    else if (v >= 1e3)
+        buf_printf(b, "%.1fk", v / 1e3);
+    else
+        buf_printf(b, "%.0f", v);
+}
+
+static int cmp_double(const void *a, const void *b)
+{
+    double x = *(const double *)a, y = *(const double *)b;
+
+    return (x > y) - (x < y);
+}
+
+/* The latest run against the median of the seven before it: below 85% is
+ * flagged as a regression, above 115% as an improvement. */
+static int verdict(const struct series *s)
+{
+    double prev[7];
+    int n = 0;
+
+    for (int i = s->n - 2; i >= 0 && n < 7; i--)
+        prev[n++] = bench_runs[s->idx[i]].sps;
+    if (n < 3)
+        return 0;
+    qsort(prev, (size_t)n, sizeof(double), cmp_double);
+    double median = prev[n / 2], last = bench_runs[s->idx[s->n - 1]].sps;
+    return last < 0.85 * median ? -1 : last > 1.15 * median ? 1 : 0;
+}
+
+static void sparkline(struct buf *b, const struct series *s, int max)
+{
+    static const char *blocks[] = { "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" };
+    int from = s->n > max ? s->n - max : 0;
+    double lo = 1e300, hi = 0;
+
+    for (int i = from; i < s->n; i++) {
+        double v = bench_runs[s->idx[i]].sps;
+        lo = v < lo ? v : lo;
+        hi = v > hi ? v : hi;
+    }
+    for (int i = from; i < s->n; i++) {
+        double v = bench_runs[s->idx[i]].sps;
+        int k = hi > lo ? (int)((v - lo) / (hi - lo) * 7.0 + 0.5) : 7;
+        buf_puts(b, blocks[k]);
+    }
+}
+
+static int keras_backend(const char *backend)
+{
+    return !strcmp(backend, "jax") || !strcmp(backend, "torch") || !strcmp(backend, "openvino") ||
+           !strcmp(backend, "tensorflow") || !strcmp(backend, "numpy");
+}
+
+static void commit_link(struct buf *b, const struct run *r)
+{
+    if (!*r->commit) {
+        buf_puts(b, "-");
+        return;
+    }
+    if (keras_backend(r->backend)) {
+        buf_puts(b, "<a href=\"https://github.com/keras-team/keras/commit/");
+        buf_esc(b, r->commit);
+        buf_puts(b, "\">");
+        buf_esc(b, r->commit);
+        buf_puts(b, "</a>");
+    } else {
+        buf_esc(b, r->commit);
+    }
+}
+
+static void page_bench_series(const struct series *s)
+{
+    struct buf b = {0}, url = {0}, frame = {0}, slug = {0}, pct = {0};
+    const struct run *first = s->first, *last = &bench_runs[s->idx[s->n - 1]];
+    const struct run *best = first;
+
+    for (int i = 0; i < s->n; i++)
+        if (bench_runs[s->idx[i]].sps > best->sps)
+            best = &bench_runs[s->idx[i]];
+    series_slug(&slug, first);
+
+    buf_puts(&b, "<pre class=describe>\n");
+    field(&b, "Backend", first->backend);
+    field(&b, "Device", first->device);
+    field(&b, "Model", first->model);
+    field(&b, "Mode", first->mode);
+    buf_printf(&b, "<span class=y-key>Runs:</span>%*s<span class=y-val>%d, since %.10s</span>\n", 10, "", s->n, first->time);
+    buf_printf(&b, "<span class=y-key>Latest:</span>%*s<span class=y-val>", 8, "");
+    rate(&b, last->sps);
+    buf_printf(&b, " samples/s on %.10s</span>\n<span class=y-key>Best:</span>%*s<span class=y-val>", last->time, 10, "");
+    rate(&b, best->sps);
+    buf_printf(&b, " samples/s on %.10s, keras ", best->time);
+    commit_link(&b, best);
+    buf_puts(&b, "</span>\n</pre>\n");
+
+    int from = s->n > 60 ? s->n - 60 : 0;
+    for (int i = from; i < s->n; i++)
+        buf_printf(&pct, "%s%d", i > from ? "," : "", (int)(bench_runs[s->idx[i]].sps / best->sps * 100.0 + 0.5));
+    buf_puts(&b, "<div class=\"pulse p-bench\">\n<p class=pulse-head>Speed as % of the best run, oldest on the left</p>\n<pre>");
+    chart(&b, pct.s ? pct.s : "");
+    buf_puts(&b, "</pre>\n</div>\n");
+
+    buf_puts(&b, "<table class=k-table data-nav>\n<thead><tr><th>TIME<span class=sort>&darr;</span></th><th>SAMPLES/S</th>"
+                 "<th>&Delta; PREV</th><th>KERAS</th></tr></thead>\n<tbody>\n");
+    for (int i = s->n - 1; i >= 0; i--) {
+        const struct run *r = &bench_runs[s->idx[i]];
+        double prev = i ? bench_runs[s->idx[i - 1]].sps : 0;
+        double d = prev > 0 ? (r->sps - prev) / prev * 100.0 : 0;
+        buf_printf(&b, "<tr class=%s><td>", d < -15 ? "st-err" : d > 15 ? "st-pend" : "st-run");
+        buf_esc(&b, r->time);
+        buf_puts(&b, "</td><td>");
+        rate(&b, r->sps);
+        buf_puts(&b, "</td><td>");
+        if (prev > 0)
+            buf_printf(&b, "%+.1f%%", d);
+        buf_puts(&b, "</td><td>");
+        commit_link(&b, r);
+        buf_puts(&b, "</td></tr>\n");
+    }
+    buf_puts(&b, "</tbody>\n</table>\n");
+
+    buf_printf(&url, "/bench/%s/", slug.s);
+    buf_printf(&frame, "describe(bench/%s)", slug.s);
+    static const char *const crumbs[] = { "bench", "describe", NULL };
+    emit(url.s, "Benchmark", NULL, frame.s, crumbs, view_hints, "/bench/", &b);
+    buf_free(&b), buf_free(&url), buf_free(&frame), buf_free(&slug), buf_free(&pct);
+}
+
+static void page_bench(void)
+{
+    struct buf b = {0}, frame = {0};
+    int ns;
+    struct series *s = group_bench(&ns);
+
+    buf_puts(&b, "<div class=logs><p>Keras nightly benchmarks from the homelab, in samples per second, higher is better. "
+                 "Every backend trains and runs a small CNN and MLP each night on whatever Keras was at that day. "
+                 "The GPU node is clock capped and shares its card with other jobs, so a single dip is usually the "
+                 "machine. A drop that stays is worth a look.</p></div>\n");
+    if (!ns)
+        buf_puts(&b, "<p class=foot-note>No runs yet. tools/bench.py collects them from the homelab.</p>\n");
+    else
+        buf_puts(&b, "<table class=k-table data-nav>\n<thead><tr><th>BACKEND<span class=sort>&uarr;</span></th><th>DEVICE</th>"
+                     "<th>MODEL</th><th>MODE</th><th>LATEST</th><th>&Delta; PREV</th><th>TREND</th><th>RUNS</th>"
+                     "<th>STATUS</th></tr></thead>\n<tbody>\n");
+    for (int k = 0; k < ns; k++) {
+        const struct run *r = s[k].first, *last = &bench_runs[s[k].idx[s[k].n - 1]];
+        double prev = s[k].n > 1 ? bench_runs[s[k].idx[s[k].n - 2]].sps : 0;
+        int v = verdict(&s[k]);
+        struct buf slug = {0};
+        series_slug(&slug, r);
+        buf_printf(&b, "<tr class=%s><td><a href=\"/bench/%s/\">", v < 0 ? "st-err" : v > 0 ? "st-pend" : "st-run", slug.s);
+        buf_esc(&b, r->backend);
+        buf_puts(&b, "</a></td><td>");
+        buf_esc(&b, r->device);
+        buf_puts(&b, "</td><td>");
+        buf_esc(&b, r->model);
+        buf_puts(&b, "</td><td>");
+        buf_esc(&b, r->mode);
+        buf_puts(&b, "</td><td>");
+        rate(&b, last->sps);
+        buf_puts(&b, "</td><td>");
+        if (prev > 0)
+            buf_printf(&b, "%+.1f%%", (last->sps - prev) / prev * 100.0);
+        buf_puts(&b, "</td><td class=spark>");
+        sparkline(&b, &s[k], 24);
+        buf_printf(&b, "</td><td>%d</td><td>%s</td></tr>\n", s[k].n,
+                   v < 0 ? "Regressed" : v > 0 ? "Faster" : "Steady");
+        buf_free(&slug);
+        page_bench_series(&s[k]);
+    }
+    if (ns)
+        buf_puts(&b, "</tbody>\n</table>\n");
+
+    buf_printf(&frame, "bench(keras)[%d]", ns);
+    static const char *const crumbs[] = { "bench", NULL };
+    emit("/bench/", "Benchmarks", "Keras nightly benchmark history from the homelab", frame.s, crumbs, list_hints, "/", &b);
+    buf_free(&b), buf_free(&frame);
+}
+
 /* :pulses, the cluster over the last day as block charts, eight rows high,
  * one column per half hour. */
 static void chart(struct buf *b, const char *values)
@@ -1055,6 +1328,7 @@ int main(int argc, char **argv)
 
     int np;
     struct post *posts = load_posts(&np);
+    load_bench();
 
     page_projects(&projects);
     for (int i = 1; i < projects.nsec; i++) {
@@ -1069,6 +1343,7 @@ int main(int argc, char **argv)
     page_xray(&projects, posts, np, &cv);
     page_events(&events);
     page_pulses(&pulses);
+    page_bench();
     page_404();
     feed(posts, np);
     shell_json(&projects, posts, np, &links);

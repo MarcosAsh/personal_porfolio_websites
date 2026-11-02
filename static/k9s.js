@@ -18,6 +18,7 @@
 		xray: "/xray/", x: "/xray/",
 		events: "/events/", ev: "/events/",
 		pulses: "/pulses/", pulse: "/pulses/", pu: "/pulses/",
+		bench: "/bench/", benchmarks: "/bench/", be: "/bench/",
 	};
 	var mode = null;
 	var cur = 0;
@@ -105,7 +106,7 @@
 	function help() {
 		var box = dialog("Help", "help");
 		var cols = [
-			["RESOURCE", [["0", "projects"], ["1", "blog"], ["2", "about"], ["3", "lab"],
+			["RESOURCE", [["0", "projects"], ["1", "blog"], ["2", "about"], ["3", "lab"], ["4", "bench"],
 				[":xray", "everything as a tree"], [":events", "a life in events"], [":pulses", "the cluster today"]]],
 			["GENERAL", [[":", "command"], ["/", "filter"], ["?", "this help"], ["esc", "back"],
 				[":skin", skins.join(" | ")], [":q", "quit"]]],

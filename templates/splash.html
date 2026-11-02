@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{site_title}}</title>
+<meta name="description" content="{{tagline}}">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body class="splash">
+<main class="login-container">
+<div class="dp-big"><img src="/img/dp.webp" width="240" height="240" alt="Display picture: a car in a GPU wind tunnel"></div>
+<h1>{{site_title}}</h1>
+<p>{{tagline}}</p>
+<a class="login-button glass" href="/home/">Enter <svg class="go" aria-hidden="true"><use href="#i-go"/></svg></a>
+</main>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-go" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="#2a7fff"/><circle cx="24" cy="24" r="21" fill="none" stroke="#fff" stroke-width="3"/><path d="M12 24h20M24 15l10 9-10 9" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
+<script>
+// The only script on the site: play the startup chime, fade out, then go in.
+// Browsers only allow sound after a click, which is why it waits for Enter.
+document.querySelector(".login-button").addEventListener("click", function (e) {
+	var chime = new Audio("/sound/startup.mp3");
+	e.preventDefault();
+	document.body.classList.add("entering");
+	chime.play().catch(function () {});
+	setTimeout(function () { location.href = "/home/"; }, 2200);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# Netlify builds the site with the C generator: no Node, no framework.
+[build]
+command = "make site"
+publish = "out"

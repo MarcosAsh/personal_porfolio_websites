@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" type="application/atom+xml" title="Blog" href="/blog/feed.xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+{{icons}}
+<div class="box-wrapper">
+<aside class="side-bar">
+<a class="dp" href="/" title="Sign out"><img src="/img/dp.webp" width="120" height="120" alt="Display picture: a car in a GPU wind tunnel"></a>
+<p class="welcome">{{site_title}}</p>
+<p class="presence"><span class="dot"></span>Online</p>
+<p class="psm">{{tagline}}</p>
+<nav class="button-container" aria-label="Elsewhere">
+{{links}}</nav>
+{{gadget}}</aside>
+<main class="main">
+<nav class="tabs" aria-label="Main">{{tabs}}</nav>
+<div class="pane glass">
+<div class="scroll">
+{{content}}
+</div>
+</div>
+</main>
+</div>
+<p class="foot">Built by a small C program, served from a homelab.</p>
+</body>
+</html>

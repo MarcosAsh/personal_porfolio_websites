@@ -1,0 +1,15 @@
+/* TEAM */
+Developer: Marcos Ashton Iglesias
+GitHub: https://github.com/MarcosAsh
+From: Madrid, Spain. Studying in Exeter, UK.
+
+/* SITE */
+Generator: forge, a few hundred lines of C17 with its own Markdown and INI parsers
+Look: k9s, the Kubernetes terminal UI, stock skin
+Hosting: built from git, metrics from a k3s homelab of NixOS machines
+JavaScript: one file, for the keyboard. Every page works without it.
+Frameworks: none were harmed
+
+/* THANKS */
+The k9s authors, for the look this borrows.
+You, for reading a humans.txt.

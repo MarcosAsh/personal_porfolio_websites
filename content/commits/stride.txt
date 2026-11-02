@@ -1,0 +1,3 @@
+2026-06-03T18:08:11Z	070ed2a	L-BFGS with two-loop recursion and Armijo line search (M4)
+2026-06-03T17:40:11Z	a49f9d9	BLAS-1 kernels (axpy, dot, scal), gemv, logistic regression (M3)
+2026-06-03T17:12:37Z	00d6346	C reference solvers, checkasm harness, fused AVX2 Adam (M0-M2)

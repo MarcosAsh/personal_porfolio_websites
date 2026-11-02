@@ -1,0 +1,12 @@
+2026-11-02T15:25:11Z	996cc90	free the runner's unused toolchains before the mutants, as four copies of the tree filled its disk
+2026-11-02T14:43:08Z	136ce96	open the held-out list: the salted file whose sha-256 was sealed on 2026-10-02
+2026-10-30T14:19:49Z	a0c01e9	copy the demo scripts margins and sigrok into the mutants, which the suite now reads
+2026-11-02T13:08:18Z	79132b0	point the measure dune comment at test_hold_capture.py, which holds the predictions
+2026-11-02T13:03:20Z	daff6df	count tdm_audio among the firmwares, cite the current gds run, and list tdm as certified with no limits
+2026-11-02T12:39:08Z	cd9c92c	give the link proof three hours, as two nightly runs of the same commit passed the two hour limit
+2026-11-02T12:38:58Z	5300d77	copy the board witnesses' json into the mutation tree, as the learn witnesses read send.json
+2026-10-30T23:09:28Z	314ef76	merge learning a protocol from a recording: the chip records, the host learns and writes firmware, the chip speaks a new message
+2026-10-30T22:59:23Z	e3eac54	check the learn witnesses in ocaml, toothed with two edges taken from the speech and the recording slowed a tenth
+2026-10-30T22:59:23Z	c7b8120	keep the six learn demos' board runs as witnesses ci checks again
+2026-10-30T22:49:03Z	781a6a8	push the frames on resume, as a soft reset floats the host port under running firmware
+2026-10-30T22:22:24Z	3e0d53a	start the speech's firmware before the analyser samples, so a clock's first move to idle is no bit

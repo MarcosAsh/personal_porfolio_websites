@@ -1,0 +1,12 @@
+2026-10-29T21:51:40Z	a7d7799	Merge readability
+2026-10-29T19:58:49Z	b37d641	Shorten the headers of the other print functions
+2026-10-29T19:58:49Z	a12e7c8	Document each print function where it is registered
+2026-10-29T19:58:49Z	95a3166	Spell out names in collect and parent
+2026-10-29T19:58:49Z	a9cd54b	Name census sessions and retimed steps
+2026-10-29T19:58:29Z	1def107	Name simp_hygiene's answer fields
+2026-10-29T19:58:29Z	7fc5626	Replace unused_imports' nested verdict with keeps and blamed
+2026-10-29T19:58:29Z	dfe711f	Reword diagnostic_commands comments as sentences
+2026-10-29T19:58:29Z	a2ef6ce	Name the definition lints' plans and fixes
+2026-10-29T19:58:29Z	9680cf0	Name simp_scope's notes, uses, rules and fixes
+2026-10-29T19:58:29Z	21c0cdf	Split faster_step's check into timing and search
+2026-10-29T19:58:29Z	0522f55	Name unused's search steps and timed result

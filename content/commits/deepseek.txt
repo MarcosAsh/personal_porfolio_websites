@@ -1,0 +1,12 @@
+2026-03-01T13:56:22Z	d53cbca	update to frontend
+2026-02-28T00:45:39Z	96ac5e4	fixed vision_test
+2026-02-28T00:34:54Z	1f92596	started new features and cleaned up repo
+2026-02-28T00:34:37Z	be8b9b0	cleaned up repo and started new features
+2026-02-27T23:54:35Z	0d071c2	front end fixes
+2026-02-24T00:42:30Z	3139c1b	removed desktop only block
+2026-02-24T00:38:40Z	1d44e0e	fiexxed modal
+2026-02-24T00:38:17Z	aea71cb	fixed box
+2026-02-24T00:37:39Z	415cbe7	remade module loaders
+2026-02-24T00:34:24Z	f869647	made some new modules
+2026-02-24T00:11:50Z	478d4f0	fixed major issues including dead mla
+2026-02-23T23:38:26Z	2afa5a0	cleaned repo

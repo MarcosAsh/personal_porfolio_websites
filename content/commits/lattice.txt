@@ -1,0 +1,12 @@
+2026-08-16T18:34:44Z	cc2d935	Bump eslint-config-next from 16.2.10 to 16.3.0 in /website (#241)
+2026-08-10T20:05:03Z	8b4c0f0	Bump react and CI node
+2026-08-10T18:32:49Z	2e201d4	Bump tailwindcss to 4.3.3
+2026-08-10T18:32:27Z	fbc0d77	Bump tailwindcss/postcss to 4.3.3
+2026-08-10T18:32:04Z	608d005	Bump jest-dom to 7.0.0
+2026-08-10T18:31:41Z	5f07d23	Bump playwright/test to 1.62.0
+2026-08-10T18:31:31Z	197483c	Bump pyyaml to 6.0.3
+2026-08-10T18:31:21Z	46f40df	Bump torch to 2.13.0
+2026-08-10T18:30:54Z	54bafe4	Bump trimesh to 4.12.2
+2026-08-10T18:30:50Z	d879c03	Bump setup-node to v7
+2026-08-10T18:30:47Z	09f0e95	Bump setup-python to v7
+2026-07-12T21:32:09Z	62ab466	Add trained surrogate weights

@@ -1,0 +1,12 @@
+2026-07-29T19:12:15Z	68598ae	Add server and connect modes
+2026-07-29T17:55:28Z	c625fb6	Run the session over sockets
+2026-07-29T17:44:57Z	bdb9568	Give every slot its command
+2026-07-28T23:06:38Z	aa0f3bd	Split the last oversized files
+2026-07-28T22:58:40Z	bfaf36e	Split scene and drop the ducks
+2026-07-28T22:32:39Z	482e61d	Swing the weapon while reloading
+2026-07-28T22:25:05Z	7dade1b	Predict and reconcile against server
+2026-07-28T22:07:10Z	5ca09c4	Delta encode the world snapshot
+2026-07-28T22:00:39Z	9fb3fc6	Add a virtual UDP connection
+2026-07-28T21:50:18Z	de4b03b	Give the sky depth and shoulder
+2026-07-28T21:43:59Z	2fa967b	Lift team colour off black
+2026-07-28T21:42:10Z	582a324	Let the game photograph itself

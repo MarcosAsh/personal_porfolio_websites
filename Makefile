@@ -23,7 +23,7 @@ debug:
 	ASAN_OPTIONS=detect_leaks=0 UBSAN_OPTIONS=halt_on_error=1 ./forge/forge-asan content templates out-asan
 
 serve: site
-	cd out && python3 -m http.server 8080
+	python3 tools/serve.py 8080
 
 clean:
 	rm -rf out out-asan forge/forge forge/forge-asan $(OBJS)

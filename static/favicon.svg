@@ -1,10 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<defs>
-<radialGradient id="o" cx=".5" cy=".28" r=".8"><stop offset="0" stop-color="#c4faff"/><stop offset=".5" stop-color="#19b4ec"/><stop offset="1" stop-color="#0a55a8"/></radialGradient>
-<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity=".05"/></linearGradient>
-</defs>
-<circle cx="32" cy="32" r="29.5" fill="url(#o)" stroke="#fff" stroke-width="2.5"/>
-<path d="M17.5 45V21L32 36.5 46.5 21v24" fill="none" stroke="#06386e" stroke-opacity=".35" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 1.5)"/>
-<path d="M17.5 45V21L32 36.5 46.5 21v24" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-<ellipse cx="32" cy="17" rx="21" ry="11.5" fill="url(#g)"/>
+<rect x="2" y="2" width="60" height="60" rx="8" fill="#000" stroke="#1e90ff" stroke-width="4"/>
+<path d="M14 50V14h6l12 16 12-16h6v36" fill="none" stroke="#ffa500" stroke-width="7" stroke-linejoin="miter" stroke-linecap="square"/>
+<path d="M14 56h36" stroke="#00ffff" stroke-width="3"/>
 </svg>

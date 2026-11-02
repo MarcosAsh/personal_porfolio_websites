@@ -3,5 +3,6 @@ out-asan/
 forge/forge
 forge/forge-asan
 *.o
-# written by the homelab, see content/status.sample.ini
+# written by tools/metrics.py from the homelab, see content/status.sample.ini
 content/status.ini
+content/pulses.ini

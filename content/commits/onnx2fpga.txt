@@ -1,0 +1,12 @@
+2026-10-28T00:10:17Z	4aa87ed	import real brevitas exports
+2026-10-27T23:43:25Z	6b75fcb	narrow wires between dense layers
+2026-10-27T23:16:28Z	6ca332c	import qonnx quant nodes
+2026-10-27T22:43:46Z	92a06b8	add tree widths and vivado flow
+2026-10-27T19:01:26Z	b027886	close operator parity gaps
+2026-10-25T18:07:51Z	8096407	add softmax and reductions
+2026-10-25T16:05:45Z	41a79ce	widen operator coverage
+2026-10-25T15:45:05Z	d96be8e	add lookup tables and elementwise
+2026-10-25T10:36:22Z	e01c405	trim the readme
+2026-10-25T02:46:56Z	24755b9	add clock targets
+2026-10-25T00:18:27Z	3540379	merge block ram weights
+2026-10-25T00:06:43Z	22b8dfa	add reloadable weights

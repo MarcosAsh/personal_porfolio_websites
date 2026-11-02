@@ -1,6 +1,0 @@
-- [100 merged pull requests](/about/) across keras-team, 53 of them into Keras core
-- Top contributor to keras-mlx, the Keras backend for Apple MLX
-- 34 patches merged into FFmpeg and a seat in its General Assembly
-- Hand-written x86 SIMD, up to 6.2x faster than the C it replaced
-- An inference benchmarking framework for Visa's fraud model: 960 runs over 11 AWS instance types
-- A [preprint](https://zenodo.org/records/19709270) on differentiable Lattice Boltzmann simulation in JAX

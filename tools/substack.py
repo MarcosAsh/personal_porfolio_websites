@@ -11,6 +11,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 import urllib.request
 from html.parser import HTMLParser
 
@@ -211,7 +212,15 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     have = {f[:-3] for f in os.listdir(POSTS) if f.endswith(".md")}
 
-    archive = json.loads(fetch(f"{SITE}/api/v1/archive?sort=new&offset=0&limit=50"))
+    archive, cursor = [], ""
+    while True:
+        page = json.loads(fetch(f"{SITE}/api/v1/archive?sort=new&limit=12{cursor}"))
+        if isinstance(page, list):  # may be a bare list
+            page = {"posts": page}
+        archive += page["posts"]
+        if not page["posts"] or not page.get("nextCursor"):
+            break
+        cursor = "&cursor=" + urllib.parse.quote(page["nextCursor"])
     added = 0
     for item in archive:
         slug = item["slug"]
